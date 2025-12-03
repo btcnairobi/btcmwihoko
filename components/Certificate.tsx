@@ -1,17 +1,45 @@
 import React from 'react';
-import { Anchor, Award, CheckCircle, Printer } from 'lucide-react';
+import { Anchor, Award, CheckCircle, Share2 } from 'lucide-react';
 import { Button } from './ui/Button';
+import { QuestionCategory } from '../types';
 
 interface CertificateProps {
   courseTitle: string;
   chapterTitle: string;
   onClose: () => void;
+  persona?: QuestionCategory | null;
 }
 
-export const Certificate: React.FC<CertificateProps> = ({ courseTitle, chapterTitle, onClose }) => {
+export const Certificate: React.FC<CertificateProps> = ({ courseTitle, chapterTitle, onClose, persona }) => {
   const currentDate = new Date().toLocaleDateString('en-GB', {
     day: 'numeric', month: 'long', year: 'numeric'
   });
+
+  const handleShare = async () => {
+    let tag = '';
+    switch (persona) {
+      case 'spender': tag = '#keepspedn'; break;
+      case 'believer': tag = '#keepbilvn'; break;
+      case 'noderunner': tag = '#keeprunn'; break;
+      default: tag = '#bitcoin';
+    }
+    
+    const text = `I just leveled up my Bitcoin knowledge! 🎓 #btcmwihoko ${tag}`;
+
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'Bitcoin Mwihoko Certificate',
+          text: text,
+        });
+      } catch (err) {
+        console.error('Error sharing:', err);
+      }
+    } else {
+      navigator.clipboard.writeText(text);
+      alert('Hashtags copied to clipboard! Open your social app to paste.');
+    }
+  };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[80vh] text-center p-4 animate-fade-in-up">
@@ -20,9 +48,16 @@ export const Certificate: React.FC<CertificateProps> = ({ courseTitle, chapterTi
         {/* Inner Border */}
         <div className="border-2 border-deep-black h-full w-full p-8 md:p-12 relative flex flex-col items-center justify-center bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')]">
             
-            {/* Watermark */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-[0.05] pointer-events-none">
+            {/* Watermark: Anchor */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-[0.05] pointer-events-none z-0">
                 <Anchor size={400} />
+            </div>
+
+            {/* Watermark: SAMPLE */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+                <span className="text-6xl md:text-9xl font-black text-red-600/10 -rotate-45 border-8 border-red-600/10 p-4 md:p-8 rounded-xl uppercase tracking-widest select-none">
+                    Sample
+                </span>
             </div>
 
             {/* Header */}
@@ -69,7 +104,7 @@ export const Certificate: React.FC<CertificateProps> = ({ courseTitle, chapterTi
             </div>
 
             {/* Verification Badge */}
-            <div className="absolute top-8 right-8 hidden md:block">
+            <div className="absolute top-8 right-8 hidden md:block z-10">
                 <div className="w-24 h-24 rounded-full bg-prestige-gold flex items-center justify-center text-deep-black font-bold shadow-lg transform rotate-12 border-4 border-white/20 text-xs text-center leading-tight">
                     VERIFIED<br/>STUDENT
                 </div>
@@ -82,21 +117,20 @@ export const Certificate: React.FC<CertificateProps> = ({ courseTitle, chapterTi
       <div className="mt-8 max-w-2xl text-center space-y-6">
           <div className="bg-white/10 p-4 rounded-xl border border-white/10">
               <p className="text-prestige-gold font-bold mb-1 flex items-center justify-center gap-2">
-                  <CheckCircle size={16} /> Get it Signed!
+                  <CheckCircle size={16} /> Get the Real Deal!
               </p>
               <p className="text-gray-400 text-sm">
-                  We sign certificates physically every <strong>Friday at 4:21 PM</strong>. <br/>
-                  Join us at <span className="text-white font-medium">El ROI Glimmers Pazuri Hub - Bitcoin Square</span>.
+                  This is a digital sample. To get your <strong>Official Physical Certificate</strong> signed by the elders, join us at the next meetup.
+              </p>
+              <p className="text-white font-medium text-sm mt-2">
+                  El ROI Glimmers Pazuri Hub - Bitcoin Square<br/>
+                  <span className="text-bitcoin-yellow text-xs">Fridays @ 4:21 PM</span>
               </p>
           </div>
 
-          <p className="text-gray-500 text-sm">
-              Pro Tip: Take a screenshot and post it on <strong>Nostr</strong> to verify your proof of work!
-          </p>
-
           <div className="flex flex-wrap justify-center gap-4">
-            <Button variant="outline" onClick={() => window.print()} className="!border-white !text-white hover:!bg-white hover:!text-deep-black">
-                <Printer size={18} className="mr-2" /> Save / Print
+            <Button variant="outline" onClick={handleShare} className="!border-white !text-white hover:!bg-white hover:!text-deep-black">
+                <Share2 size={18} className="mr-2" /> Share Achievement
             </Button>
             <Button variant="primary" onClick={onClose} className="!bg-prestige-gold !text-deep-black">
                 Next Chapter

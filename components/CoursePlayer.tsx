@@ -173,6 +173,7 @@ export const CoursePlayer: React.FC<CoursePlayerProps> = ({ courseId, onExit }) 
                       courseTitle={course.title} 
                       chapterTitle={currentChapter.title} 
                       onClose={handleNextChapter}
+                      persona={detectedPersona}
                   />
               </div>
           </div>
