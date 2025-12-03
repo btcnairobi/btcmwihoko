@@ -1,7 +1,7 @@
 import React from 'react';
 import { Section } from './ui/Section';
 import { Button } from './ui/Button';
-import { Quote, Users, Anchor, TrendingUp, Calendar, Heart, Camera, Briefcase, PiggyBank, Coffee } from 'lucide-react';
+import { Quote, Users, TrendingUp, Calendar, Heart, Camera, Briefcase, PiggyBank, Coffee } from 'lucide-react';
 import { Page, TestimonialItem } from '../types';
 
 const TESTIMONIALS: TestimonialItem[] = [

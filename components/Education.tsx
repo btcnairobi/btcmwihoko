@@ -1,7 +1,7 @@
 import React from 'react';
 import { Section } from './ui/Section';
 import { Button } from './ui/Button';
-import { BookOpen, Zap, Shield, Users, Smartphone, GraduationCap, ArrowRight, Lock, Store, Key } from 'lucide-react';
+import { BookOpen, Zap, Users, Smartphone, GraduationCap, ArrowRight, Lock, Store } from 'lucide-react';
 import { Page } from '../types';
 
 interface EducationProps {

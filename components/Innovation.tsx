@@ -1,7 +1,7 @@
 import React from 'react';
 import { Section } from './ui/Section';
 import { Button } from './ui/Button';
-import { Lightbulb, Code, Hammer, Users, Cpu, ArrowRight, Zap, Coins, Rocket } from 'lucide-react';
+import { Lightbulb, Code, Hammer, Users, Cpu, Zap, Coins, Rocket } from 'lucide-react';
 import { Page } from '../types';
 
 interface InnovationProps {
