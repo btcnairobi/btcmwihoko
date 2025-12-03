@@ -1,5 +1,5 @@
 import React from 'react';
-import { Anchor, Bitcoin, Award, CheckCircle, Share2, Printer } from 'lucide-react';
+import { Anchor, Award, CheckCircle, Printer } from 'lucide-react';
 import { Button } from './ui/Button';
 
 interface CertificateProps {

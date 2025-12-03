@@ -1,7 +1,7 @@
 import React from 'react';
 import { Section } from './ui/Section';
 import { Button } from './ui/Button';
-import { BookOpen, Zap, Users, Smartphone, GraduationCap, ArrowRight, Lock, Store, PlayCircle } from 'lucide-react';
+import { BookOpen, Smartphone, GraduationCap, ArrowRight, PlayCircle } from 'lucide-react';
 import { Page } from '../types';
 
 interface EducationProps {
@@ -9,7 +9,7 @@ interface EducationProps {
   onStartCourse?: (courseId: string) => void;
 }
 
-export const Education: React.FC<EducationProps> = ({ onNavigate, onStartCourse }) => {
+export const Education: React.FC<EducationProps> = ({ onStartCourse }) => {
   return (
     <div className="flex flex-col">
        {/* HERO */}
@@ -68,8 +68,8 @@ export const Education: React.FC<EducationProps> = ({ onNavigate, onStartCourse 
        <Section id="courses" background="gold">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
              <div className="text-center mb-16">
-                <h2 className="text-deep-black/60 font-bold tracking-widest uppercase text-sm mb-3">Curriculum</h2>
-                <h3 className="text-4xl font-bold text-deep-black">Choose Your Path</h3>
+                 <h2 className="text-deep-black/60 font-bold tracking-widest uppercase text-sm mb-3">Curriculum</h2>
+                 <h3 className="text-4xl font-bold text-deep-black">Choose Your Path</h3>
              </div>
 
              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, BookOpen, CheckCircle, HelpCircle, X, Menu, Lock, User, ShoppingBag, Cpu, Heart, AlertCircle, PlayCircle, FileText } from 'lucide-react';
-import { Course, Chapter, Topic, QuestionCategory } from '../types';
+import { ChevronLeft, ChevronRight, BookOpen, CheckCircle, HelpCircle, X, Menu, ShoppingBag, Cpu, Heart, AlertCircle } from 'lucide-react';
+import { QuestionCategory } from '../types';
 import { COURSES } from '../data/courses';
 import { Button } from './ui/Button';
 import { Certificate } from './Certificate';
