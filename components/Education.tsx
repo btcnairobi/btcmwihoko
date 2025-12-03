@@ -1,14 +1,15 @@
 import React from 'react';
 import { Section } from './ui/Section';
 import { Button } from './ui/Button';
-import { BookOpen, Zap, Users, Smartphone, GraduationCap, ArrowRight, Lock, Store } from 'lucide-react';
+import { BookOpen, Zap, Users, Smartphone, GraduationCap, ArrowRight, Lock, Store, PlayCircle } from 'lucide-react';
 import { Page } from '../types';
 
 interface EducationProps {
   onNavigate?: (page: Page) => void;
+  onStartCourse?: (courseId: string) => void;
 }
 
-export const Education: React.FC<EducationProps> = ({ onNavigate }) => {
+export const Education: React.FC<EducationProps> = ({ onNavigate, onStartCourse }) => {
   return (
     <div className="flex flex-col">
        {/* HERO */}
@@ -63,31 +64,6 @@ export const Education: React.FC<EducationProps> = ({ onNavigate }) => {
          </div>
        </Section>
 
-       {/* LIGHTNING */}
-       <Section id="lightning" background="black">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-             <Zap className="w-16 h-16 text-prestige-gold mx-auto mb-6 animate-pulse" />
-             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">The Lightning Network</h2>
-             <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-16 font-medium">
-               Bitcoin isn't just for saving. With Lightning, it's for buying coffee, paying bills, and sending money instantly for near-zero fees.
-             </p>
-
-             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {[
-                  { icon: Smartphone, title: "Instant", desc: "Settles in milliseconds. Faster than swiping a card." },
-                  { icon: Store, title: "Micropayments", desc: "Send as little as 1 satoshi. Perfect for small tips." },
-                  { icon: Lock, title: "Private", desc: "Secure and onion-routed. Your privacy matters." }
-                ].map((feat, i) => (
-                  <div key={i} className="bg-charcoal p-8 rounded-[2rem] border border-white/5 hover:bg-white hover:text-deep-black transition-all duration-300 group hover:-translate-y-2">
-                     <feat.icon className="w-10 h-10 text-prestige-gold mb-4 group-hover:text-deep-black transition-colors" />
-                     <h3 className="text-xl font-bold text-white mb-2 group-hover:text-deep-black">{feat.title}</h3>
-                     <p className="text-gray-400 text-sm group-hover:text-deep-black/70">{feat.desc}</p>
-                  </div>
-                ))}
-             </div>
-          </div>
-       </Section>
-
        {/* COURSES */}
        <Section id="courses" background="gold">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -109,7 +85,9 @@ export const Education: React.FC<EducationProps> = ({ onNavigate }) => {
                       <li className="flex items-center text-deep-black/80 text-sm font-medium"><ArrowRight size={12} className="mr-2"/> Fiat vs. Bitcoin</li>
                       <li className="flex items-center text-deep-black/80 text-sm font-medium"><ArrowRight size={12} className="mr-2"/> Installing a Wallet</li>
                    </ul>
-                   <Button variant="outline" fullWidth>Start Here</Button>
+                   <Button variant="outline" fullWidth onClick={() => onStartCourse && onStartCourse('beginner')}>
+                       <PlayCircle size={18} className="mr-2" /> Start Course
+                   </Button>
                 </div>
 
                 {/* Intermediate */}
@@ -125,7 +103,9 @@ export const Education: React.FC<EducationProps> = ({ onNavigate }) => {
                       <li className="flex items-center text-gray-300 text-sm font-medium"><ArrowRight size={12} className="mr-2 text-prestige-gold"/> Hardware Wallets</li>
                       <li className="flex items-center text-gray-300 text-sm font-medium"><ArrowRight size={12} className="mr-2 text-prestige-gold"/> Seed Phrase Security</li>
                    </ul>
-                   <Button variant="primary" fullWidth className="!bg-prestige-gold !text-deep-black hover:!bg-white">Join Class</Button>
+                   <Button variant="primary" fullWidth className="!bg-prestige-gold !text-deep-black hover:!bg-white" onClick={() => onStartCourse && onStartCourse('intermediate')}>
+                      <PlayCircle size={18} className="mr-2" /> Start Course
+                   </Button>
                 </div>
 
                  {/* Advanced */}
@@ -140,39 +120,14 @@ export const Education: React.FC<EducationProps> = ({ onNavigate }) => {
                       <li className="flex items-center text-deep-black/80 text-sm font-medium"><ArrowRight size={12} className="mr-2"/> Lightning Channels</li>
                       <li className="flex items-center text-deep-black/80 text-sm font-medium"><ArrowRight size={12} className="mr-2"/> Mining at Home</li>
                    </ul>
-                   <Button variant="outline" fullWidth>Go Deep</Button>
+                   <Button variant="outline" fullWidth onClick={() => onStartCourse && onStartCourse('advanced')}>
+                       <PlayCircle size={18} className="mr-2" /> Start Course
+                   </Button>
                 </div>
              </div>
           </div>
        </Section>
 
-       {/* WORKSHOPS */}
-       <Section id="workshops" background="light">
-           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-               <div className="flex flex-col md:flex-row justify-between items-end mb-12">
-                   <div>
-                       <h3 className="text-4xl font-bold text-deep-black">Community Workshops</h3>
-                       <p className="text-deep-black/60 mt-2 font-medium">Education happens best when we gather.</p>
-                   </div>
-                   <Button variant="primary" className="mt-4 md:mt-0" onClick={() => onNavigate && onNavigate('events')}>See Schedule</Button>
-               </div>
-               
-               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                   {[
-                       { title: "Youth Coding", icon: GraduationCap, desc: "Teaching the next generation about SHA-256 and sovereignty." },
-                       { title: "Merchant Training", icon: Store, desc: "Helping shop owners accept Bitcoin and manage cash flow." },
-                       { title: "Church & Family", icon: Users, desc: "Discussing the ethics of money and protecting family wealth." }
-                   ].map((ws, i) => (
-                       <div key={i} className="bg-white/40 p-8 rounded-[2rem] border border-deep-black/5 hover:bg-white transition-colors duration-300">
-                           <ws.icon className="w-10 h-10 text-deep-black mb-4" />
-                           <h4 className="text-xl font-bold text-deep-black mb-2">{ws.title}</h4>
-                           <p className="text-deep-black/70 text-sm font-medium leading-relaxed">{ws.desc}</p>
-                       </div>
-                   ))}
-               </div>
-           </div>
-       </Section>
-       
        {/* TOOLKIT */}
         <Section id="toolkit" background="black">
             <div className="max-w-5xl mx-auto px-4 text-center">

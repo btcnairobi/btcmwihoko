@@ -10,10 +10,12 @@ import { Contact } from './components/Contact';
 import { Support } from './components/Support';
 import { Blog } from './components/Blog';
 import { Footer } from './components/Footer';
+import { CoursePlayer } from './components/CoursePlayer';
 import { Page } from './types';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>('home');
+  const [currentCourse, setCurrentCourse] = useState<string | null>(null);
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isFooterOpen, setIsFooterOpen] = useState(false);
 
@@ -24,6 +26,10 @@ const App: React.FC = () => {
     paddingBottom: (currentPage === 'home' && isFooterOpen) ? `${footerHeight}px` : '0px',
   };
 
+  const handleStartCourse = (courseId: string) => {
+    setCurrentCourse(courseId);
+  };
+
   const renderPage = () => {
     switch(currentPage) {
       case 'home':
@@ -31,7 +37,7 @@ const App: React.FC = () => {
       case 'about':
         return <About onNavigate={setCurrentPage} />;
       case 'academy':
-        return <Education onNavigate={setCurrentPage} />;
+        return <Education onNavigate={setCurrentPage} onStartCourse={handleStartCourse} />;
       case 'merchants':
         return <Merchants onNavigate={setCurrentPage} />;
       case 'blog':
@@ -51,22 +57,28 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-deep-black text-white font-sans selection:bg-prestige-gold selection:text-deep-black flex flex-col">
-      <Navbar 
-        currentPage={currentPage} 
-        onNavigate={setCurrentPage}
-        isOpen={isNavOpen}
-        setIsOpen={setIsNavOpen}
-      />
-      
-      <main className="flex-grow w-full" style={mainStyle}>
-        {renderPage()}
-      </main>
+      {currentCourse ? (
+        <CoursePlayer courseId={currentCourse} onExit={() => setCurrentCourse(null)} />
+      ) : (
+        <>
+          <Navbar 
+            currentPage={currentPage} 
+            onNavigate={setCurrentPage}
+            isOpen={isNavOpen}
+            setIsOpen={setIsNavOpen}
+          />
+          
+          <main className="flex-grow w-full" style={mainStyle}>
+            {renderPage()}
+          </main>
 
-      <Footer 
-        isHome={currentPage === 'home'} 
-        isOpen={isFooterOpen}
-        setIsOpen={setIsFooterOpen}
-      />
+          <Footer 
+            isHome={currentPage === 'home'} 
+            isOpen={isFooterOpen}
+            setIsOpen={setIsFooterOpen}
+          />
+        </>
+      )}
     </div>
   );
 };
