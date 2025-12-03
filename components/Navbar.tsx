@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { 
   Menu, X, Home, Info, BookOpen, 
-  Store, Sun, Calendar, 
+  Store, Calendar, 
   Image, Mail, FileText 
 } from 'lucide-react';
 import { NavItem, Page } from '../types';
@@ -13,7 +13,6 @@ const NAV_ITEMS: NavItem[] = [
   { id: 'academy', label: 'Academy', icon: BookOpen },
   { id: 'merchants', label: 'Merchants', icon: Store },
   { id: 'blog', label: 'Blog', icon: FileText },
-  { id: 'builders', label: 'Builders', icon: Sun },
   { id: 'events', label: 'Events', icon: Calendar },
   { id: 'gallery', label: 'Gallery', icon: Image },
   { id: 'join', label: 'Join', icon: Mail },

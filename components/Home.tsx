@@ -2,7 +2,7 @@ import React from 'react';
 import { Hero } from './Hero';
 import { Page } from '../types';
 import { Section } from './ui/Section';
-import { BookOpen, ShoppingBag, Lightbulb, ArrowRight, Anchor, Users } from 'lucide-react';
+import { BookOpen, ShoppingBag, ArrowRight, Anchor, Users } from 'lucide-react';
 import { Button } from './ui/Button';
 
 interface HomeProps {
@@ -29,15 +29,15 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         </div>
       </Section>
 
-      {/* Three Pillars */}
+      {/* Pillars */}
       <Section id="pillars" background="light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
                 <span className="text-deep-black/60 text-xs font-bold tracking-widest uppercase mb-2 block">Our Foundation</span>
-                <h3 className="text-4xl font-bold text-deep-black">The Three Pillars</h3>
+                <h3 className="text-4xl font-bold text-deep-black">Our Pillars</h3>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 {/* Education */}
                 <div onClick={() => onNavigate('academy')} className="group p-8 rounded-[2rem] bg-deep-black text-prestige-gold shadow-xl hover:shadow-2xl transition-all cursor-pointer hover:-translate-y-2">
                     <div className="h-14 w-14 rounded-2xl bg-white/10 flex items-center justify-center text-prestige-gold mb-6 group-hover:bg-prestige-gold group-hover:text-deep-black transition-colors">
@@ -63,20 +63,6 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                     </p>
                     <div className="flex items-center text-deep-black text-sm font-bold">
                         Find Merchants <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform"/>
-                    </div>
-                </div>
-
-                {/* Innovation */}
-                <div onClick={() => onNavigate('builders')} className="group p-8 rounded-[2rem] bg-deep-black text-prestige-gold shadow-xl hover:shadow-2xl transition-all cursor-pointer hover:-translate-y-2">
-                    <div className="h-14 w-14 rounded-2xl bg-white/10 flex items-center justify-center text-prestige-gold mb-6 group-hover:bg-prestige-gold group-hover:text-deep-black transition-colors">
-                        <Lightbulb size={28} />
-                    </div>
-                    <h4 className="text-2xl font-bold text-white mb-4">Innovation</h4>
-                    <p className="text-gray-400 mb-6">
-                        Building the tools we need. Mining, nodes, and open-source software to secure the network.
-                    </p>
-                    <div className="flex items-center text-prestige-gold text-sm font-bold">
-                        See Builders <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform"/>
                     </div>
                 </div>
             </div>

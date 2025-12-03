@@ -4,7 +4,6 @@ import { Home } from './components/Home';
 import { About } from './components/About';
 import { Education } from './components/Education';
 import { Merchants } from './components/Merchants';
-import { Innovation } from './components/Innovation';
 import { GridPage } from './components/Programs';
 import { Community } from './components/Community';
 import { Contact } from './components/Contact';
@@ -37,8 +36,6 @@ const App: React.FC = () => {
         return <Merchants onNavigate={setCurrentPage} />;
       case 'blog':
         return <Blog onNavigate={setCurrentPage} />;
-      case 'builders':
-        return <Innovation onNavigate={setCurrentPage} />;
       case 'events':
         return <GridPage page="events" title="Gatherings" subtitle="Community Events" />;
       case 'gallery':
