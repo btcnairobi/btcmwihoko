@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bitcoin Mwihoko | Anchored in Hope</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'prestige-gold': '#D4AF37',
+              'deep-black': '#0A0A0A',
+              'bitcoin-yellow': '#F7C948',
+              'sats-glow': '#FFDD44',
+              'energy-orange': '#FF8C00',
+              'charcoal': '#333333',
+              'off-white': '#F5F5F5',
+            },
+            fontFamily: {
+              sans: ['Ubuntu', 'sans-serif'],
+            },
+            backgroundImage: {
+              'gradient-soft': 'linear-gradient(180deg, #D4AF37 0%, #CCA528 100%)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Custom scrollbar - Visible on Desktop */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #D4AF37;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #0A0A0A;
+        border-radius: 9999px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #333;
+      }
+
+      /* Hide scrollbar on Mobile */
+      @media (max-width: 640px) {
+        ::-webkit-scrollbar {
+          display: none;
+        }
+        html, body {
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body class="bg-prestige-gold text-deep-black antialiased selection:bg-deep-black selection:text-prestige-gold">
+    <div id="root"></div>
+  </body>
+</html>
