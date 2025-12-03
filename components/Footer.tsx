@@ -12,12 +12,12 @@ export const Footer: React.FC<FooterProps> = ({ isHome = false, isOpen, setIsOpe
   const toggleFooter = () => setIsOpen(!isOpen);
 
   // Styling logic
-  // On Homepage: Fixed at bottom, Black Background (blends with page), White Text.
+  // On Homepage: Fixed at bottom, Black Background.
   // Not Homepage: Standard relative footer.
   
   const baseClasses = isHome 
-    ? `fixed bottom-0 left-0 right-0 z-40 transition-transform duration-500 ease-in-out bg-charcoal text-white border-t border-white/5`
-    : 'relative z-10 bg-charcoal text-white rounded-t-[3rem] mt-[-2rem]';
+    ? `fixed bottom-0 left-0 right-0 z-40 transition-transform duration-500 ease-in-out bg-deep-black text-white border-t border-white/5`
+    : 'relative z-10 bg-deep-black text-white rounded-t-[3rem] mt-[-2rem]';
 
   const translateClass = isHome 
     ? (isOpen ? 'translate-y-0' : 'translate-y-[calc(100%-3rem)]') // 3rem is the visible "handle" height
@@ -29,7 +29,7 @@ export const Footer: React.FC<FooterProps> = ({ isHome = false, isOpen, setIsOpe
     <footer className={`${baseClasses} ${translateClass} ${shadowClass} overflow-hidden`}>
       
       {/* Anchor Watermark */}
-      <div className="absolute -right-10 -bottom-10 text-deep-black pointer-events-none opacity-20">
+      <div className="absolute -right-10 -bottom-10 text-white pointer-events-none opacity-5">
           <Anchor size={300} strokeWidth={0.5} className="rotate-[-20deg]" />
       </div>
 
@@ -61,13 +61,13 @@ export const Footer: React.FC<FooterProps> = ({ isHome = false, isOpen, setIsOpe
           </div>
 
           <div className="flex space-x-6">
-            <a href="#" className="h-10 w-10 rounded-full flex items-center justify-center transition-all bg-deep-black text-gray-400 hover:bg-prestige-gold hover:text-deep-black">
+            <a href="#" className="h-10 w-10 rounded-full flex items-center justify-center transition-all bg-charcoal text-gray-400 hover:bg-prestige-gold hover:text-deep-black">
                 <Twitter size={18} />
             </a>
-            <a href="#" className="h-10 w-10 rounded-full flex items-center justify-center transition-all bg-deep-black text-gray-400 hover:bg-prestige-gold hover:text-deep-black">
+            <a href="#" className="h-10 w-10 rounded-full flex items-center justify-center transition-all bg-charcoal text-gray-400 hover:bg-prestige-gold hover:text-deep-black">
                 <Instagram size={18} />
             </a>
-            <a href="#" className="h-10 w-10 rounded-full flex items-center justify-center transition-all bg-deep-black text-gray-400 hover:bg-prestige-gold hover:text-deep-black">
+            <a href="#" className="h-10 w-10 rounded-full flex items-center justify-center transition-all bg-charcoal text-gray-400 hover:bg-prestige-gold hover:text-deep-black">
                 <Facebook size={18} />
             </a>
           </div>

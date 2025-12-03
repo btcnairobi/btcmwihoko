@@ -2,9 +2,13 @@ import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Home } from './components/Home';
 import { About } from './components/About';
+import { Education } from './components/Education';
+import { Merchants } from './components/Merchants';
+import { Innovation } from './components/Innovation';
 import { GridPage } from './components/Programs';
-import { GalleryPage } from './components/Community';
+import { Community } from './components/Community';
 import { Contact } from './components/Contact';
+import { Support } from './components/Support';
 import { Footer } from './components/Footer';
 import { Page } from './types';
 
@@ -25,21 +29,23 @@ const App: React.FC = () => {
       case 'home':
         return <Home onNavigate={setCurrentPage} />;
       case 'about':
-        return <About />;
+        return <About onNavigate={setCurrentPage} />;
       case 'academy':
-        return <GridPage page="academy" title="Education" subtitle="Mwihoko Academy" />;
+        return <Education onNavigate={setCurrentPage} />;
       case 'merchants':
-        return <GridPage page="merchants" title="Economy" subtitle="Local Merchants" />;
+        return <Merchants onNavigate={setCurrentPage} />;
       case 'mining':
         return <GridPage page="mining" title="Security" subtitle="Home Mining" />;
       case 'builders':
-        return <GridPage page="builders" title="Innovation" subtitle="Tech Builders" />;
+        return <Innovation onNavigate={setCurrentPage} />;
       case 'events':
         return <GridPage page="events" title="Gatherings" subtitle="Community Events" />;
       case 'gallery':
-        return <GalleryPage />;
+        return <Community onNavigate={setCurrentPage} />;
       case 'join':
         return <Contact />;
+      case 'support':
+        return <Support />;
       default:
         return <Home onNavigate={setCurrentPage} />;
     }

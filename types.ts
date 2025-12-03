@@ -1,6 +1,6 @@
 import { LucideIcon } from 'lucide-react';
 
-export type Page = 'home' | 'about' | 'academy' | 'merchants' | 'mining' | 'builders' | 'events' | 'gallery' | 'join';
+export type Page = 'home' | 'about' | 'academy' | 'merchants' | 'mining' | 'builders' | 'events' | 'gallery' | 'join' | 'support';
 
 export interface NavItem {
   id: Page;

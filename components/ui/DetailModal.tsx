@@ -61,7 +61,7 @@ export const DetailModal: React.FC<DetailModalProps> = ({ isOpen, onClose, item 
         <div className="p-6 sm:p-10 space-y-8 bg-white rounded-t-[3rem] -mt-6 relative min-h-0">
           
           {/* Paragraphs (Max 3) */}
-          <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
+          <div className="space-y-4 text-deep-black leading-relaxed text-lg font-medium">
             {item.details.paragraphs.slice(0, 3).map((para, idx) => (
               <p key={idx}>{para}</p>
             ))}

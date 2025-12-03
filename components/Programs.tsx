@@ -75,7 +75,7 @@ export const GridPage: React.FC<GridPageProps> = ({ page, title, subtitle }) => 
       <Section id={page} background="gold">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-16 text-center">
-              <h2 className="text-deep-black/70 font-bold tracking-widest uppercase text-sm mb-3">{title}</h2>
+              <h2 className="text-deep-black/60 font-bold tracking-widest uppercase text-sm mb-3">{title}</h2>
               <h3 className="text-4xl md:text-5xl font-bold text-deep-black">{subtitle}</h3>
           </div>
 
@@ -84,19 +84,19 @@ export const GridPage: React.FC<GridPageProps> = ({ page, title, subtitle }) => 
               <button 
                 key={program.id}
                 onClick={() => setSelectedProgram(program)}
-                className="group relative overflow-hidden p-8 bg-deep-black border border-gray-800 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 text-left w-full"
+                className="group relative overflow-hidden p-8 bg-white border border-deep-black/5 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 text-left w-full"
               >
                 <div className="flex flex-col h-full">
-                  <div className="h-12 w-12 bg-charcoal rounded-full flex items-center justify-center mb-6 text-prestige-gold group-hover:bg-prestige-gold group-hover:text-deep-black transition-colors duration-300">
+                  <div className="h-12 w-12 bg-deep-black rounded-full flex items-center justify-center mb-6 text-prestige-gold group-hover:bg-prestige-gold group-hover:text-deep-black transition-colors duration-300">
                     <program.icon className="h-6 w-6" />
                   </div>
                   
-                  <h4 className="text-xl font-bold text-white mb-2">{program.title}</h4>
-                  <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">
+                  <h4 className="text-xl font-bold text-deep-black mb-2">{program.title}</h4>
+                  <p className="text-deep-black/70 text-sm leading-relaxed line-clamp-3 font-medium">
                     {program.description}
                   </p>
                   
-                  <div className="mt-6 pt-6 border-t border-gray-800 flex items-center text-prestige-gold text-xs font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+                  <div className="mt-6 pt-6 border-t border-gray-100 flex items-center text-deep-black text-xs font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
                     Launch Card
                   </div>
                 </div>
