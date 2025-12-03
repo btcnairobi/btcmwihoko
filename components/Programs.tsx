@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Section } from './ui/Section';
-import { BookOpen, Store, Sun, Shield, Users, Zap, Globe, Monitor, Heart, Coffee, Mic } from 'lucide-react';
+import { BookOpen, Store, Shield, Users, Zap, Globe, Monitor, Heart, Coffee, Mic, Bitcoin } from 'lucide-react';
 import { ProgramItem, Page } from '../types';
 import { DetailModal } from './ui/DetailModal';
 
@@ -49,26 +49,6 @@ const DATA_STORE: Record<string, ProgramItem[]> = {
     { id: 'coffee', title: 'Bitcoin Coffee', description: 'Casual chats over good coffee.', icon: Coffee, details: MOCK_DETAILS },
   ]
 };
-
-// Helper for icon since we removed Hammer but need Bitcoin for the savings item
-function Bitcoin(props: any) {
-  return (
-    <svg 
-      {...props} 
-      xmlns="http://www.w3.org/2000/svg" 
-      width="24" 
-      height="24" 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      stroke="currentColor" 
-      strokeWidth="2" 
-      strokeLinecap="round" 
-      strokeLinejoin="round"
-    >
-      <path d="M11.767 19.089c4.924.868 6.14-6.025 1.216-6.894m-1.216 6.894L5.86 18.047m5.908 1.042-.347 1.97m1.563-8.864c4.924.869 6.14-6.025 1.215-6.893m-1.215 6.893-3.94-.694m5.155-6.2L8.279 5.308m6.155-2.58-.347 1.97m-3.081 17.492-1.507-8.584-2.152-12.26a1.2 1.2 0 0 0-1.396-.968L3.296 1.487" />
-    </svg>
-  );
-}
 
 interface GridPageProps {
   page: Page;
