@@ -3,7 +3,7 @@ import { Section } from './ui/Section';
 import { 
   LayoutGrid, Scissors, Coffee, ShoppingBag, Car, 
   Briefcase, Store, Gamepad2, Dumbbell, GraduationCap,
-  Home, Truck, HeartPulse, CheckCircle2, ArrowRight
+  Home, Truck, HeartPulse, CheckCircle2
 } from 'lucide-react';
 import { Button } from './ui/Button';
 import { Page } from '../types';
