@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bitcoin Mwihoko | Anchored in Hope</title>
+    <title>Bitcoin Mwihoko | Circular Economy</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script>
@@ -16,7 +16,7 @@
               'bitcoin-yellow': '#F7C948',
               'sats-glow': '#FFDD44',
               'energy-orange': '#FF8C00',
-              'charcoal': '#333333',
+              'charcoal': '#1A1A1A',
               'off-white': '#F5F5F5',
             },
             fontFamily: {
@@ -24,25 +24,26 @@
             },
             backgroundImage: {
               'gradient-soft': 'linear-gradient(180deg, #D4AF37 0%, #CCA528 100%)',
+              'gradient-dark': 'linear-gradient(180deg, #0A0A0A 0%, #1A1A1A 100%)',
             }
           }
         }
       }
     </script>
     <style>
-      /* Custom scrollbar - Visible on Desktop */
+      /* Custom scrollbar */
       ::-webkit-scrollbar {
         width: 8px;
       }
       ::-webkit-scrollbar-track {
-        background: #D4AF37;
+        background: #0A0A0A;
       }
       ::-webkit-scrollbar-thumb {
-        background: #0A0A0A;
+        background: #D4AF37;
         border-radius: 9999px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #333;
+        background: #F7C948;
       }
 
       /* Hide scrollbar on Mobile */
@@ -69,7 +70,7 @@
 }
 </script>
 </head>
-  <body class="bg-prestige-gold text-deep-black antialiased selection:bg-deep-black selection:text-prestige-gold">
+  <body class="bg-deep-black text-off-white antialiased selection:bg-prestige-gold selection:text-deep-black">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>

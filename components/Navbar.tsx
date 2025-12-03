@@ -39,15 +39,14 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, isOpen,
     }, 400);
   };
 
-  // Sticky positioning allows the expanded menu to physically push the page content down
   return (
-    <nav className="sticky top-0 z-50 bg-prestige-gold border-b border-deep-black/5 shadow-sm transition-all duration-300">
+    <nav className="sticky top-0 z-50 bg-deep-black/95 backdrop-blur-sm border-b border-white/5 shadow-lg transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
           {/* Logo */}
-          <button onClick={() => handleNavClick('home')} className="focus:outline-none">
-            <Logo variant="dark" />
+          <button onClick={() => handleNavClick('home')} className="focus:outline-none group">
+            <Logo variant="light" className="group-hover:opacity-80 transition-opacity" />
           </button>
 
           {/* Desktop Nav */}
@@ -57,14 +56,14 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, isOpen,
                 <button
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
-                  className={`font-medium transition-colors duration-200 ${currentPage === item.id ? 'text-deep-black font-bold border-b-2 border-deep-black' : 'text-deep-black/70 hover:text-deep-black'}`}
+                  className={`font-medium transition-all duration-200 ${currentPage === item.id ? 'text-prestige-gold font-bold scale-105' : 'text-gray-400 hover:text-white'}`}
                 >
                   {item.label}
                 </button>
               ))}
               <button 
                 onClick={() => handleNavClick('join')}
-                className="bg-deep-black text-prestige-gold hover:bg-charcoal px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 shadow-md transform hover:-translate-y-0.5"
+                className="bg-prestige-gold text-deep-black hover:bg-bitcoin-yellow px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 shadow-md transform hover:-translate-y-0.5"
               >
                 Connect
               </button>
@@ -75,7 +74,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, isOpen,
           <div className="-mr-2 flex md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-3 rounded-full bg-deep-black/5 text-deep-black hover:bg-deep-black hover:text-prestige-gold transition-all focus:outline-none"
+              className="inline-flex items-center justify-center p-3 rounded-full bg-charcoal text-prestige-gold hover:bg-gray-800 transition-all focus:outline-none"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -83,9 +82,9 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, isOpen,
         </div>
       </div>
 
-      {/* Mobile Menu - Relies on Sticky positioning to push content */}
+      {/* Mobile Menu */}
       <div 
-        className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out bg-prestige-gold border-t border-deep-black/5 ${isOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'}`}
+        className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out bg-deep-black border-t border-white/5 ${isOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'}`}
       >
         <div className="px-4 py-8">
           <div className="grid grid-cols-3 gap-4">
@@ -95,8 +94,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, isOpen,
                 onClick={() => handleNavClick(item.id)}
                 className={`flex flex-col items-center justify-center p-4 rounded-3xl transition-all duration-300 border ${
                   activeIcon === item.id || currentPage === item.id
-                    ? 'bg-deep-black text-prestige-gold scale-95 border-deep-black' 
-                    : 'bg-white/20 border-deep-black/5 text-deep-black hover:bg-white/40'
+                    ? 'bg-prestige-gold text-deep-black scale-95 border-prestige-gold' 
+                    : 'bg-charcoal border-white/5 text-gray-400 hover:bg-gray-800 hover:text-white'
                 }`}
               >
                 <item.icon className={`h-6 w-6 mb-2 ${activeIcon === item.id ? 'animate-pulse' : ''}`} />

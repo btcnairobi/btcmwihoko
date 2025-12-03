@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
+import { Home } from './components/Home';
 import { About } from './components/About';
 import { GridPage } from './components/Programs';
 import { GalleryPage } from './components/Community';
@@ -14,8 +14,6 @@ const App: React.FC = () => {
   const [isFooterOpen, setIsFooterOpen] = useState(false);
 
   // Layout "Push" Logic
-  // Navbar is sticky, so it pushes naturally.
-  // Footer is fixed on home, so we add padding to main to "push" content up when footer opens.
   const footerHeight = 400; // Approximate max height of footer content
   const mainStyle: React.CSSProperties = {
     transition: 'padding-bottom 0.5s ease-in-out',
@@ -25,7 +23,7 @@ const App: React.FC = () => {
   const renderPage = () => {
     switch(currentPage) {
       case 'home':
-        return <Hero onNavigate={setCurrentPage} />;
+        return <Home onNavigate={setCurrentPage} />;
       case 'about':
         return <About />;
       case 'academy':
@@ -43,12 +41,12 @@ const App: React.FC = () => {
       case 'join':
         return <Contact />;
       default:
-        return <Hero onNavigate={setCurrentPage} />;
+        return <Home onNavigate={setCurrentPage} />;
     }
   };
 
   return (
-    <div className="min-h-screen bg-prestige-gold text-deep-black font-sans selection:bg-deep-black selection:text-prestige-gold flex flex-col">
+    <div className="min-h-screen bg-deep-black text-white font-sans selection:bg-prestige-gold selection:text-deep-black flex flex-col">
       <Navbar 
         currentPage={currentPage} 
         onNavigate={setCurrentPage}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Anchor, ArrowRight } from 'lucide-react';
+import { Anchor, ArrowRight, Bitcoin, CreditCard, Heart } from 'lucide-react';
 import { Button } from './ui/Button';
 import { Page } from '../types';
 
@@ -9,64 +9,67 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
   return (
-    // min-h calculation accounts for the sticky Navbar height (approx 5rem / 80px) to prevent scroll on load
-    <section id="hero" className="relative min-h-[calc(100vh-5rem)] flex items-center justify-center overflow-hidden bg-prestige-gold">
+    <section id="hero" className="relative min-h-[calc(100vh-5rem)] flex items-center justify-center overflow-hidden bg-deep-black">
       
       {/* Decorative Organic Shapes */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] bg-bitcoin-yellow/20 rounded-full blur-[80px]"></div>
-        <div className="absolute top-[40%] -right-[10%] w-[40%] h-[60%] bg-white/10 rounded-full blur-[60px]"></div>
+        <div className="absolute -top-[10%] -left-[10%] w-[60%] h-[60%] bg-prestige-gold/5 rounded-full blur-[100px]"></div>
+        <div className="absolute top-[30%] -right-[10%] w-[50%] h-[70%] bg-bitcoin-yellow/5 rounded-full blur-[120px]"></div>
+        <div className="absolute bottom-[0%] left-[20%] w-[30%] h-[30%] bg-energy-orange/5 rounded-full blur-[80px]"></div>
       </div>
 
       {/* Large Decorative Anchor */}
-      <div className="absolute right-[5%] bottom-[5%] opacity-[0.05] pointer-events-none">
-        <Anchor size={600} strokeWidth={0.5} className="text-deep-black rotate-12" />
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none">
+        <Anchor size={800} strokeWidth={0.5} className="text-off-white rotate-12" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-10">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
         
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-deep-black/10 bg-deep-black/5 mb-8">
-          <span className="w-2 h-2 rounded-full bg-deep-black"></span>
-          <span className="text-deep-black text-sm font-bold tracking-widest uppercase">Love. Strength. Hope.</span>
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-prestige-gold/30 bg-prestige-gold/10 mb-10 backdrop-blur-sm animate-fade-in-up">
+          <Bitcoin className="w-4 h-4 text-prestige-gold" />
+          <span className="text-prestige-gold text-xs font-bold tracking-[0.2em] uppercase">Circular Economy</span>
         </div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-deep-black mb-6 leading-tight tracking-tight">
-          Anchored in <br />
-          <span className="relative">
-             Hope
-             <svg className="absolute w-full h-3 -bottom-1 left-0 text-white" viewBox="0 0 200 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.00025 6.99997C2.00025 6.99997 101.5 1.49997 197.5 3.99997" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/></svg>
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight tracking-tight">
+          Building Mwihoko’s <br />
+          <span className="text-transparent bg-clip-text bg-gradient-soft">
+             Bitcoin Future
           </span>
         </h1>
 
-        <p className="max-w-xl mx-auto text-deep-black/80 text-lg md:text-xl mb-12 font-medium leading-relaxed">
-          Bitcoin Mwihoko is a family. We are building a stable foundation filled with love, wealth, and new beginnings for our community.
+        <div className="flex justify-center gap-4 md:gap-12 mb-12 text-gray-400 font-medium text-lg md:text-xl">
+            <div className="flex items-center gap-2">
+                <Bitcoin className="text-bitcoin-yellow" />
+                <span>Earn</span>
+            </div>
+            <div className="w-1.5 h-1.5 rounded-full bg-charcoal"></div>
+            <div className="flex items-center gap-2">
+                <CreditCard className="text-bitcoin-yellow" />
+                <span>Spend</span>
+            </div>
+            <div className="w-1.5 h-1.5 rounded-full bg-charcoal"></div>
+            <div className="flex items-center gap-2">
+                <Heart className="text-bitcoin-yellow" />
+                <span>Live</span>
+            </div>
+        </div>
+
+        <p className="max-w-2xl mx-auto text-gray-400 text-lg mb-12 leading-relaxed">
+          We are creating a self-sustaining community where value stays local. 
+          By adopting a sound money standard, we anchor our families in hope and financial sovereignty.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <Button variant="primary" className="group" onClick={() => onNavigate('about')}>
-            Our Mission
+          <Button variant="primary" className="group min-w-[180px]" onClick={() => onNavigate('join')}>
+            Join Movement
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
-          <Button variant="outline" onClick={() => onNavigate('join')}>
-            Join Us
+          <Button variant="outline" className="min-w-[180px]" onClick={() => onNavigate('merchants')}>
+            Spend Bitcoin
           </Button>
         </div>
 
-        {/* Stats Strip */}
-        <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8">
-          {[
-            { label: 'Community', value: 'Unity' },
-            { label: 'Foundation', value: 'Strong' },
-            { label: 'Future', value: 'Bright' },
-            { label: 'Bitcoin', value: 'Only' },
-          ].map((stat, i) => (
-            <div key={i} className="flex flex-col items-center">
-              <span className="text-2xl md:text-3xl font-bold text-deep-black">{stat.value}</span>
-              <span className="text-xs text-deep-black/60 uppercase tracking-widest mt-1 font-bold">{stat.label}</span>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );

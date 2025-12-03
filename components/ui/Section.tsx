@@ -11,7 +11,7 @@ export const Section: React.FC<SectionProps> = ({
   id, 
   className = '', 
   children,
-  background = 'gold'
+  background = 'black'
 }) => {
   const bgClasses = {
     gold: 'bg-prestige-gold text-deep-black',

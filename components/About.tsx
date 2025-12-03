@@ -28,16 +28,16 @@ const VALUES: ValueProp[] = [
 
 export const About: React.FC = () => {
   return (
-    <Section id="about" background="gold">
+    <Section id="about" background="black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
         <div className="text-center mb-16">
-          <h2 className="text-deep-black/70 font-bold tracking-widest uppercase text-sm mb-3">Who We Are</h2>
-          <h3 className="text-4xl md:text-5xl font-bold text-deep-black">The Heart of Mwihoko</h3>
+          <h2 className="text-prestige-gold font-bold tracking-widest uppercase text-sm mb-3">Who We Are</h2>
+          <h3 className="text-4xl md:text-5xl font-bold text-white">The Heart of Mwihoko</h3>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-          <div className="space-y-6 text-deep-black/80 leading-relaxed text-lg font-medium">
+          <div className="space-y-6 text-gray-400 leading-relaxed text-lg font-medium">
             <p>
               Bitcoin Mwihoko represents a beautiful new beginning. In a world of constant change, we have chosen to drop our anchor here.
             </p>
@@ -50,13 +50,13 @@ export const About: React.FC = () => {
           </div>
           
           <div className="relative">
-            <div className="aspect-square rounded-[3rem] overflow-hidden border-4 border-deep-black relative group shadow-2xl">
+            <div className="aspect-square rounded-[3rem] overflow-hidden border-4 border-charcoal relative group shadow-2xl">
               <img 
                 src="https://picsum.photos/800/800?grayscale" 
                 alt="Mwihoko Community" 
-                className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700"
+                className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 opacity-80"
               />
-              <div className="absolute inset-0 bg-prestige-gold/20 mix-blend-overlay"></div>
+              <div className="absolute inset-0 bg-prestige-gold/10 mix-blend-overlay"></div>
             </div>
           </div>
         </div>
@@ -66,9 +66,9 @@ export const About: React.FC = () => {
           {VALUES.map((value, idx) => (
             <div 
               key={idx} 
-              className="p-8 bg-deep-black border border-gray-800 rounded-[2.5rem] hover:-translate-y-2 transition-transform duration-300 shadow-xl"
+              className="p-8 bg-charcoal border border-white/5 rounded-[2.5rem] hover:-translate-y-2 transition-transform duration-300 shadow-xl"
             >
-              <div className="h-12 w-12 bg-charcoal rounded-full flex items-center justify-center mb-6 text-prestige-gold">
+              <div className="h-12 w-12 bg-deep-black rounded-full flex items-center justify-center mb-6 text-prestige-gold">
                 <value.icon size={24} />
               </div>
               <h4 className="text-xl font-bold text-white mb-3">{value.title}</h4>
