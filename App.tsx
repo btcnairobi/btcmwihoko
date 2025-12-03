@@ -9,6 +9,7 @@ import { GridPage } from './components/Programs';
 import { Community } from './components/Community';
 import { Contact } from './components/Contact';
 import { Support } from './components/Support';
+import { Blog } from './components/Blog';
 import { Footer } from './components/Footer';
 import { Page } from './types';
 
@@ -34,8 +35,8 @@ const App: React.FC = () => {
         return <Education onNavigate={setCurrentPage} />;
       case 'merchants':
         return <Merchants onNavigate={setCurrentPage} />;
-      case 'mining':
-        return <GridPage page="mining" title="Security" subtitle="Home Mining" />;
+      case 'blog':
+        return <Blog onNavigate={setCurrentPage} />;
       case 'builders':
         return <Innovation onNavigate={setCurrentPage} />;
       case 'events':

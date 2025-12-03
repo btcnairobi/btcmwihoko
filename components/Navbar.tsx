@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { 
   Menu, X, Home, Info, BookOpen, 
-  Store, Hammer, Sun, Calendar, 
-  Image, Mail 
+  Store, Sun, Calendar, 
+  Image, Mail, FileText 
 } from 'lucide-react';
 import { NavItem, Page } from '../types';
 import { Logo } from './ui/Logo';
@@ -12,7 +12,7 @@ const NAV_ITEMS: NavItem[] = [
   { id: 'about', label: 'About', icon: Info },
   { id: 'academy', label: 'Academy', icon: BookOpen },
   { id: 'merchants', label: 'Merchants', icon: Store },
-  { id: 'mining', label: 'Mining', icon: Hammer },
+  { id: 'blog', label: 'Blog', icon: FileText },
   { id: 'builders', label: 'Builders', icon: Sun },
   { id: 'events', label: 'Events', icon: Calendar },
   { id: 'gallery', label: 'Gallery', icon: Image },
