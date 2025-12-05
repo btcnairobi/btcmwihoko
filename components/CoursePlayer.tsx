@@ -171,9 +171,11 @@ export const CoursePlayer: React.FC<CoursePlayerProps> = ({ courseId, onExit }) 
                   </div>
                   <Certificate 
                       courseTitle={course.title} 
+                      courseLevel={course.level}
                       chapterTitle={currentChapter.title} 
                       onClose={handleNextChapter}
                       persona={detectedPersona}
+                      isLastChapter={isLastChapter}
                   />
               </div>
           </div>
